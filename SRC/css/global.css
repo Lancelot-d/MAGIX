@@ -1,0 +1,95 @@
+@font-face{
+    font-family:"today-easter";
+    src:url(../font/Today-Easter.otf)
+}
+* {
+	padding:0;
+	margin:0;
+	font-family: "today-easter";
+	font-weight: 600;
+}
+html, body {
+
+}
+
+.center-title{
+    width: 100%;
+    text-align: center;
+}
+.center-element {
+    display: flex;
+    justify-content: center;
+	margin: 4% 0;
+}
+.center-authentification{
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.sectionAuthentification {
+	width:30%;
+	background-color: white;
+	box-shadow: rgba(2, 2, 2, 0.2) 0px 2px 8px 0px;
+	border-color: black;
+	border-radius: 25px;
+}
+h1 {
+	color:#333;
+	text-align:center;
+	margin: 5% 0 10% 0;
+	font-size: 3em;
+}
+h2{
+	font-size: 1.8em;
+	margin-right: 3%;
+}
+input{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	font-weight: 100;
+}
+#submit-button{
+	width: 15%;
+}
+
+#play-button
+{
+	width: 10%;
+	margin-right: 5%;
+}
+#practice-button
+{
+	width: 10%;
+	margin-left: 5%;
+}
+
+#center-div{
+	display: inline-block;
+    vertical-align: top;
+}
+
+#div-button{
+	margin-top: 15%;
+	text-align: center;	
+}
+
+#leave-button{
+	margin-top: 2%;
+	width: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#background-Acceuil{
+	background-image:url('../images/background1.jpg');
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+#background-Tavern{
+	background-image:url('../images/backgroundAnimate.gif');
+	background-repeat:no-repeat;
+	background-size: cover;
+}
