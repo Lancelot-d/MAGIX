@@ -7,6 +7,9 @@
 
 	require_once("partials/header.php");
 ?>
+<div id="left-canon"> </div>
+<div id="right-canon"> </div>
+
 <div class="center-authentification">
 	<div class="sectionAuthentification">
 		<h1>

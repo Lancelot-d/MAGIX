@@ -9,7 +9,8 @@
 	font-weight: 600;
 }
 html, body {
-
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .center-title{
@@ -26,13 +27,15 @@ html, body {
     justify-content: center;
 	align-items: center;
 	height: 100%;
+	
 }
 .sectionAuthentification {
-	width:30%;
+	width:25%;
 	background-color: white;
 	box-shadow: rgba(2, 2, 2, 0.2) 0px 2px 8px 0px;
 	border-color: black;
 	border-radius: 25px;
+	min-width: 300px;
 }
 h1 {
 	color:#333;
@@ -83,7 +86,7 @@ input{
 }
 
 #background-Acceuil{
-	background-image:url('../images/background1.jpg');
+	background-image:url('../images/background1Sol.jpg');
 	background-repeat:no-repeat;
 	background-size: cover;
 }
@@ -92,4 +95,44 @@ input{
 	background-image:url('../images/backgroundAnimate.gif');
 	background-repeat:no-repeat;
 	background-size: cover;
+}
+.canonball{
+	position: absolute;
+	background-image:url('../images/CanonballFire.png');
+	background-repeat:no-repeat;
+    background-size:contain;
+
+	width: 6%;
+	height: 8%;
+}
+
+#left-canon{
+	position: absolute;
+	background-image:url('../images/canon.png');
+	background-repeat:no-repeat;
+    background-size:contain;
+	transform: rotate(-10deg);
+
+	width: 10%;
+	height: 15%;
+	min-width: 100px;
+	min-height: 130px;
+
+	left: 5%;
+	top: 83%;
+}
+#right-canon{
+	position: absolute;
+	background-image:url('../images/canon.png');
+	transform: rotate(10deg) scaleX(-1);
+	background-repeat:no-repeat;
+    background-size:contain;
+	
+	width: 10%;
+	height: 15%;
+	min-width: 100px;
+	min-height: 130px;
+
+	right: 5%;
+	top: 83%;
 }
