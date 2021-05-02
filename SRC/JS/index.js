@@ -7,15 +7,16 @@ let timeBetweenCanonShot = 1000;
 window.addEventListener("load", () => {
     tick();
 
-    setTimeout(() => {
-        CanonShot();
-    }, timeBetweenCanonShot);
+    CanonShotAtInterval()
 })
+
+window.onclick=() => {
+    CanonShot();
+}
 
 CanonShot = () => {
     windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
-
 
     let leftCanon = document.querySelector('#left-canon');
     let leftCanonX = (window.scrollX + leftCanon.getBoundingClientRect().left)+leftCanon.offsetWidth;
@@ -28,9 +29,15 @@ CanonShot = () => {
     spriteList.push(new Canonball(leftCanonX, leftCanonY, false));
     spriteList.push(new Canonball(rightCannonX, rightCannonY, true));
 
+}
+
+CanonShotAtInterval=() => {
     setTimeout(() => {
         CanonShot();
+        CanonShotAtInterval();      
     }, timeBetweenCanonShot);
+    
+
 }
 
 const tick = () => {
@@ -51,23 +58,17 @@ class Canonball {
         this.node.className = "canonball";
         this.node.style.left = x + "px";
         this.node.style.top = y + "px";
-        /*
-        this.speed = windowWidth/175;
-        this.speedHeight = windowHeight/50
-        this.acc = 0.2;
-        */
+
         this.speed = windowWidth/(Math.random() * (200 - 150) + 150);
         this.speedHeight = windowHeight/(Math.random() * (60 - 40) + 40);
         this.acc = (Math.random() * (0.3 - 0.1) + 0.1);
 
-
-        
         if(isRightCanon){this.angleRotation = -75;}
         else{this.angleRotation = 0;}
 
-        console.log("speed : " + this.speed);
+        //console.log("speed : " + this.speed);
         this.accRotation = ((1/(this.speed/10)));
-        console.log(this.accRotation)
+        //  console.log(this.accRotation)
 
         document.body.append(this.node);
         this.isRightCanon = isRightCanon;
@@ -118,10 +119,6 @@ class Canonball {
 
             currentX += this.speed;
         }
-        
-        
-
-
         if(this.isRightCanon)
         {
             this.angleRotation-= this.accRotation

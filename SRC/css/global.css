@@ -29,7 +29,7 @@ html, body {
 	height: 100%;
 	
 }
-.sectionAuthentification {
+.sectionAuthentification{
 	width:25%;
 	background-color: white;
 	box-shadow: rgba(2, 2, 2, 0.2) 0px 2px 8px 0px;
@@ -59,12 +59,20 @@ input{
 #play-button
 {
 	width: 10%;
+	min-width: 150px;
 	margin-right: 5%;
 }
 #practice-button
 {
 	width: 10%;
+	min-width: 150px;
 	margin-left: 5%;
+}
+
+#leave-button{
+	margin-top: 2%;
+	width: 10%;
+	min-width: 150px;
 }
 
 #center-div{
@@ -77,12 +85,8 @@ input{
 	text-align: center;	
 }
 
-#leave-button{
-	margin-top: 2%;
-	width: 10%;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+#div-button-leave{
+	text-align: center;	
 }
 
 #background-Acceuil{
@@ -135,4 +139,11 @@ input{
 
 	right: 5%;
 	top: 83%;
+}
+
+#canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
 }
