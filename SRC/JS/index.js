@@ -7,6 +7,8 @@ let timeBetweenCanonShot = 1000;
 window.addEventListener("load", () => {
     tick();
 
+    
+
     CanonShotAtInterval()
 })
 
@@ -39,7 +41,6 @@ CanonShotAtInterval=() => {
     
 
 }
-
 const tick = () => {
     for (let i = 0; i < spriteList.length; i++) {
         const sprite = spriteList[i];
@@ -66,13 +67,10 @@ class Canonball {
         if(isRightCanon){this.angleRotation = -75;}
         else{this.angleRotation = 0;}
 
-        //console.log("speed : " + this.speed);
         this.accRotation = ((1/(this.speed/10)));
-        //  console.log(this.accRotation)
 
         document.body.append(this.node);
         this.isRightCanon = isRightCanon;
-
     }
 
     tick() {
@@ -85,16 +83,16 @@ class Canonball {
         {
             if (currentX > (windowWidth/2)*0.95)
             {
-                this.speed += this.acc; // velocity
+                this.speed += this.acc; 
             
-                this.speedHeight -= this.acc; // velocity
+                this.speedHeight -= this.acc; 
                 currentY-=this.speedHeight
             }
             else
             {
-                this.speed -= this.acc; // velocity
+                this.speed -= this.acc; 
                 
-                this.speedHeight += this.acc*0.90; // velocity
+                this.speedHeight += this.acc*0.90; 
                 currentY+=this.speedHeight
             }
 
@@ -104,16 +102,16 @@ class Canonball {
         {
             if (currentX < (windowWidth/2)*0.95)
             {
-                this.speed += this.acc; // velocity
+                this.speed += this.acc;
             
-                this.speedHeight -= this.acc; // velocity
+                this.speedHeight -= this.acc; 
                 currentY-=this.speedHeight
             }
             else
             {
-                this.speed -= this.acc; // velocity
+                this.speed -= this.acc; 
                 
-                this.speedHeight += this.acc*0.90; // velocity
+                this.speedHeight += this.acc*0.90; 
                 currentY+=this.speedHeight
             }
 
@@ -128,7 +126,6 @@ class Canonball {
             this.angleRotation+= this.accRotation
         }
         
-
         this.node.style.left = currentX + "px";
         this.node.style.top = currentY + "px";
         this.node.style.transform = "rotate(" + this.angleRotation +"deg)"

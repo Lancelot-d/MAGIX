@@ -11,7 +11,8 @@ class tavernAction extends CommonAction
 		parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
 	}
 
-	protected function executeAction() {
+	protected function executeAction() 
+	{
         $_SESSION["page"] = "Tavern";
 
 		if ($_SESSION["visibility"] < parent::$VISIBILITY_MEMBER)

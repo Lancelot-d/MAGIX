@@ -6,7 +6,7 @@ class Cat {
 		let loopColumn = true;
 		let scale = 2;
 
-		this.tiledImage = new TiledImage("images/catRunning.png", columnCount, rowCount,
+		this.tiledImage = new TiledImage("images/catRunning2.png", columnCount, rowCount,
 							refreshDelay, loopColumn, scale, null);
 
 		this.tiledImage.changeRow(0);
@@ -24,8 +24,6 @@ class Cat {
 		{
 			if(this.direction == "left"){this.direction="right";}
 			else{this.direction="left";}
-
-			console.log(this.direction);
 		}
 		if (this.direction == "right") {
 			this.tiledImage.setFlipped(true);
@@ -36,7 +34,6 @@ class Cat {
 			this.x -= this.speed;
 		}
 		this.tiledImage.tick(this.x, this.y, ctx);
-
 		return true;
 	}
 }

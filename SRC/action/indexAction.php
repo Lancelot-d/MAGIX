@@ -29,12 +29,11 @@ class IndexAction extends CommonAction
 
 				$cookieName = "GameUserName";
 				$cookieData = $data["username"];
-				$cookieId = time() + (60*120+5);
+				$cookieId = time() + (86400 * 30);
 				setcookie($cookieName, $cookieData, $cookieId, "/");
 				$this->key = $result->key;
 				$_SESSION["key"] = $result->key;
 				$_SESSION["visibility"] = parent::$VISIBILITY_MEMBER;
-
 				header("Location:tavern.php");
 				exit();
 			}

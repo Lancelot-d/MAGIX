@@ -22,32 +22,21 @@ abstract class CommonAction
 			session_start();
 		}
 
-		if (empty($_SESSION["visibility"])) {
+		if (empty($_SESSION["visibility"])) 
+		{
 			$_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC;
 		}
 
-		if ($_SESSION["visibility"] < $this->pageVisibility) {
+		if ($_SESSION["visibility"] < $this->pageVisibility) 
+		{
 			header("location:index.php");
 			exit;
 		}
 		$this->executeAction();
 	}
 
-	protected abstract function executeAction();
-
-	
-	public function isLoggedIn()
+	public function callAPI($service, array $data) 
 	{
-		return $_SESSION["visibility"] > CommonAction::$VISIBILITY_PUBLIC;
-	}
-
-	public function getUsername()
-	{
-		return empty($_SESSION["username"]) ? "Invité" : $_SESSION["username"];
-	}
-
-	
-	public function callAPI($service, array $data) {
 		$apiURL = "https://magix.apps-de-cours.com/api/" . $service;
 
 		$options = array(
@@ -60,11 +49,6 @@ abstract class CommonAction
 		$context  = stream_context_create($options);
 		$result = file_get_contents($apiURL, false, $context);
 
-	if (strpos($result, "<br") !== false) {
-			var_dump($result);
-			exit;
-		}
-	return json_decode($result);
+		return json_decode($result);
 	}
-
 }

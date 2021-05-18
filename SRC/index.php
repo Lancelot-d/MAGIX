@@ -26,8 +26,9 @@
 					<input type="text" name="username" 
 					value="
 					<?php 
-						if(isset($_COOKIE['GameUserName'])) {
-							echo  $_COOKIE['GameUserName'];
+						if(isset($_COOKIE['GameUserName'])) 
+						{
+							echo $_COOKIE['GameUserName'];
 						} 
 					?>">
 					</td>
@@ -52,9 +53,7 @@
 				}
 				?>
 			</div>
-
 		</form>
-
 	</div>
 </div>
 <?php

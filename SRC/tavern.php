@@ -1,8 +1,6 @@
 <script src="JS/TiledImage.js"></script>
 <script src="JS/sprite/Cat.js"></script>
-<script src="JS/tavern.js"></script>
-
-
+<script src="JS/tavern.js"></script>		
 <?php
 	require_once("action/tavernAction.php");
 
@@ -21,9 +19,17 @@
 	</div>
 </div>
 <div class="center-div">
-	<div id="div-button-leave"> 
+	<div class="center-inside"> 
 		<a href=""><img src="images/quitter.png" alt="play button" id="leave-button"></a>
 	</div>
+</div>
+<div class="center-div">
+	<div class="center-inside"> 
+		<iframe style="width:800px;height:240px;margin-top: 2%;" onload="applyStyles(this)"  
+				src="https://magix.apps-de-cours.com/server/#/chat/<?php if(isset($_SESSION["key"])){echo $_SESSION["key"];}?>">
+		</iframe>
+	</div>
+	
 </div>
 
 <?php

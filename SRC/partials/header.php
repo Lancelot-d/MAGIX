@@ -4,6 +4,6 @@
         <title><?= $_SESSION["page"] ?> | Magix</title>
         <link href="css/menu.css" rel="stylesheet"/>
 		<meta charset="utf-8">
-    </head>
+    </head> 
     <body>
 		
